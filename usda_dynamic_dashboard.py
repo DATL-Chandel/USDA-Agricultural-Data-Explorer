@@ -16,22 +16,27 @@ import io
 import os
 import time
 from typing import List, Dict, Optional, Tuple
-from dotenv import load_dotenv, find_dotenv
+# from dotenv import load_dotenv, find_dotenv  # Commented for Streamlit Cloud deployment
 
 # =============================================================================
 # CONFIGURATION
 # =============================================================================
 
+# For local development: Uncomment the lines below and create a .env file with USDA_API_KEY
 # Load environment variables from a local .env file if present
-load_dotenv(find_dotenv(), override=False)
+# load_dotenv(find_dotenv(), override=False)
 
-# Resolve API key from environment first, then Streamlit secrets as fallback
-API_KEY = os.getenv("USDA_API_KEY")
+# Resolve API key: Try Streamlit secrets first (for deployment), then environment variable (local or Cloud)
+API_KEY = None
+try:
+    # Streamlit Cloud secrets (preferred for deployment)
+    API_KEY = st.secrets.get("USDA_API_KEY", None)
+except Exception:
+    pass
+
+# Fallback to environment variable (works for local .env or Streamlit Cloud env vars)
 if not API_KEY:
-    try:
-        API_KEY = st.secrets.get("USDA_API_KEY", None)
-    except Exception:
-        API_KEY = None
+    API_KEY = os.getenv("USDA_API_KEY")
 BASE_URL = "https://quickstats.nass.usda.gov/api"
 
 # =============================================================================
