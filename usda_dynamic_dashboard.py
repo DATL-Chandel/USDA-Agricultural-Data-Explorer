@@ -1439,17 +1439,17 @@ def main():
             5. **🗺️ Select Locations** - Pick specific states or counties to analyze
             6. **📅 Select Years** - Choose specific years or use quick-select buttons
             
-            ### ✨ Smart Features
+            ### Smart Features
             
-            - ✅ **Dynamic Filtering**: Only see options that have actual data
-            - ✅ **Data Availability**: See record counts and year ranges
-            - ✅ **Multi-Select**: Compare multiple locations and statistics
-            - ✅ **Progress Tracking**: Know exactly where you are in the process
-            - ✅ **No Dead Ends**: Can't select invalid combinations
-            
-            ### 🚀 Get Started
-            
-            Begin by selecting a commodity category in the sidebar! ➡️
+            - **Dynamic Filtering**: Only see options that have actual data
+            - **Data Availability**: See record counts and year ranges
+            - **Multi-Select**: Compare multiple locations and statistics
+            - **Progress Tracking**: Know exactly where you are in the process
+            - **No Dead Ends**: Can't select invalid combinations
+
+            ### Get Started
+
+            Begin by selecting a commodity category in the sidebar!
             """)
             
             # Show some stats about available data
